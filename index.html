@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awal-Cineco</title>
+    <!-- Css file external linking -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Icons CSS File -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--Bootstrap Css file linking-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!--Inserting Title Images -->
+     <link rel="shortcut icon" href="Resources/Site-Logo.jpeg" type="image/x-icon">
+</head>
+
+<body class="bg-light" onload="authentication()" id="body-tag" >
+
+
+<!-- Title and movie details-->
+
+<section id="top-details-section">
+    <div class="row" id="main-title-div">
+        
+
+        <div class="col-md-1" id="time-div">
+            
+        </div>
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-4">
+
+            <h1 id="title-name" class="text-info">  AWAL MOVIE CINECO </h1>
+
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-2" id="screen-area">
+
+            <button class="btn btn-primary" onclick="screenselect(this)">Screen-Select </button>
+
+        </div>
+
+        <div class="com-md-1">
+
+            <button class="btn btn-default" onclick="cancelhousefull()" id="top-reload"><i class="bi bi-app-indicator"></i></button>
+
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-1">
+            <button class="btn btn-success" onclick="movienameload(this)" id="name-btn"><i class="bi bi-cloud-arrow-up-fill"></i></button>
+        </div>
+
+        <div id="now-showing" class="col-md-4 text-center">
+            <h3 id="blank-name">--------------</h3>
+        </div>
+
+        <div class="col-md-1">
+            <button class="btn btn-danger" id="housefull-btn" onclick="housefullload()"> <b> H</b></button>
+        </div>
+
+        <div class="col-md-2 text-center" id="house-full-board">
+
+        </div>
+
+        
+
+    </div>
+</section>
+<hr>
+
+
+<!--Movie Screen -->
+
+<div class='row'>
+
+
+    <div class='col-md-12' id='movie-screen-div'>
+
+        <iframe src="" width='100%' height='450px' id="movie-screen"></iframe>
+
+    </div>
+
+</div>
+
+<hr>
+
+
+
+<!--Movie-Control-Area-->
+
+
+<section id="movie-controls">
+
+    <div class="row">
+
+        <div class="col-md-4 text-center">
+
+            <button class="btn btn-danger btn-lg" onclick="lightoff(this)"><i class="bi bi-lamp"></i>  </button>
+
+            <button class="btn btn-success btn-lg" onclick="lighton(this)"> <i class="bi bi-lamp-fill"></i></button>
+            
+
+
+        </div>
+
+        <div class="col-md-3 text-center">
+
+            <button class="btn btn-success btn-lg" onclick="screenon(this)" id="on-btn"> <i class="bi bi-power"></i> </button>
+
+            <button class="btn btn-danger btn-lg" onclick="screenoff(this)"> <i class="bi bi-power"></i> </button>
+
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-3">
+
+            <button class="btn btn-primary btn-lg" onclick="loadmovie(this)" id="load-movie-btn"> <i class="bi bi-film"></i> </button>
+
+            <button class="btn btn-danger btn-lg" onclick="ejectmovie(this)"> <i class="bi bi-eject"></i></button>
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+<hr>
+
+<!--Ad-Control-Area-->
+
+<section id="movie-ad-controls">
+
+    <div class="row">
+
+        <div class="col-md-4 text-center">
+
+            <button class="btn btn-primary btn-lg" onclick="ad1load(this)" id="load-ad1-btn"> <i class="bi bi-badge-ad"></i></button>
+
+            <button class="btn btn-danger btn-lg" onclick="ad1eject(this)"> <i class="bi bi-eject-fill"></i></button>
+            
+
+
+        </div>
+
+        <div class="col-md-3 text-center">
+
+            <button class="btn btn-primary btn-lg" onclick="ad2load(this)" id="load-ad2-btn"> <i class="bi bi-badge-ad"></i> </button>
+
+            <button class="btn btn-danger btn-lg" onclick="ad2eject(this)"> <i class="bi bi-eject-fill"></i></button>
+
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-3">
+
+            <button class="btn btn-primary btn-lg" onclick="ad3load(this)" id="load-ad3-btn"> <i class="bi bi-badge-ad"></i> </button>
+
+            <button class="btn btn-danger btn-lg" onclick="ad3eject(this)"> <i class="bi bi-eject-fill"></i></button>
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+<hr color="red">
+
+<!--Site Footer and closing area-->
+
+
+<section id="footer">
+
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <button class="btn btn-success btn-md" id="phone-in" onclick="window.alert('Call Accepted! ')"><i class="bi bi-telephone-inbound-fill"></i> </button>
+        </div>
+
+        <div class="col-md-7 text-center" id="footer-btns">
+
+            <button class="btn btn-danger btn-lg" onclick="closesales(this)"> <i class="bi bi-x-diamond-fill"></i> Close Show </button>
+
+            <button class="btn btn-warning btn-lg" onclick="window.close();"><i class="bi bi-exclamation-diamond"></i> Emergency Exit! </button>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class='col-md-2'>
+            <button class="btn btn-success btn-md" id="phone-out"onclick="window.alert('Call Inititated! ')" ><i class="bi bi-telephone-outbound-fill"></i> </button>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap js file linking -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Js file linking -->
+<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

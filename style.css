@@ -1,0 +1,39 @@
+#title-name{
+   font-family: 'Times New Roman', Times, serif;
+}
+#screen-area{
+    margin-top: 5px;
+}
+#on-time{
+    font-weight: 600;
+    margin-left: 15px;
+}
+#now-showing{
+    border-style: groove;
+    margin-left: 40px;
+}
+#name-btn{
+    margin-top: 3px;
+}
+#now-showing{
+    margin-right: 10px;
+}
+#housefull-btn{
+    margin-top: 3px;
+}
+#top-reload{
+    margin-left: 20px;
+    margin-top: 3px;
+}
+#movie-screen{
+    border-style: ridge;
+}
+#phone-in{
+    margin-left: 30px;
+}
+#phone-out{
+    margin-left: 100px;
+}
+#footer-btns{
+    padding-left: 80px;
+}
